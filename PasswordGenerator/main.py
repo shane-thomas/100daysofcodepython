@@ -21,3 +21,11 @@ for i in range(1,nr_numbers+1):
 print(password1)
 #Hard Level - Order of characters randomised:
 #e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
+password2=[]
+for i in range(1,nr_letters+1):
+  password2.append(random.choice(letters))
+for i in range(1,nr_symbols+1):
+  password2.append(random.choice(symbols))
+for i in range(1,nr_numbers+1):
+  password2.append(random.choice(numbers))
+print(random.shuffle(password2))
