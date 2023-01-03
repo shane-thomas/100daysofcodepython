@@ -32,4 +32,4 @@ for i in range(1,nr_numbers+1):
 random.shuffle(password2)
 for i in password2:
   password2s+=i
- print(password2s)
+print(password2s)
