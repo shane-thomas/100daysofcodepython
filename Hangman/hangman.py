@@ -1,5 +1,6 @@
 import random
-word_list = ["aardvark", "baboon", "camel"]
+import hangman_words has hw
+word_list = hw.word_list
 
 L=[]
 chosen_word=str(random.choice(word_list))
