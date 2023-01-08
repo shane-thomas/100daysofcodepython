@@ -1,7 +1,5 @@
 from art import logo
 
-alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
 def cipher(text, shift, direction):
   endtext = ''
   if direction == 'decode':
@@ -13,17 +11,21 @@ def cipher(text, shift, direction):
     else:
       endtext+=letter
   print(f"The {direction}d text is {endtext}")
-  restart = input("Type 'yes' if you want to go again. Otherwise type 'no'").lower()
-  if restart == 'yes':
-    restart()
-  else:
-    print("No\n Goodbye")
 
-def restart():
+
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+start=True
+
+while start:
+  print()
   print(logo)
   direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n").lower().strip(" ")
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))%26
   cipher(text = text, shift=shift, direction=direction)
+  restart = input("Type 'yes' if you want to go again. Otherwise type 'no'.\n ").lower()
   
-restart()
+  if restart == "no":
+    start = False
+    print("Goodbye")
